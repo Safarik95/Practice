@@ -1,0 +1,29 @@
+digraph components {
+    graph [rankdir=TB, splines=true, nodesep=0.6, ranksep=0.75, fontname="Liberation Sans", bgcolor="white", pad=0.2, newrank=true];
+    node  [shape=box, style="rounded,filled", fontname="Liberation Sans", fontsize=11, color="#444444", penwidth=1.2, margin="0.18,0.10", width=2.3];
+    edge  [fontname="Liberation Sans", fontsize=9, color="#444444", arrowsize=0.7];
+
+    main    [label="main.cpp\nзапуск приложения", fillcolor="#eef2f7"];
+    ui      [label="MainWindow\nокно Qt Widgets:\nтаблица, поля, кнопки", fillcolor="#dbe8f7"];
+    storage [label="Storage\nJSON, QSaveFile,\nпроверка файла", fillcolor="#fbefd0"];
+    program [label="Program\nstd::deque<Track>,\nоперации варианта", fillcolor="#dcefdc"];
+    types   [label="Track, Result\nномер и итог операции", fillcolor="#f2f2f2"];
+    file    [label="Файл JSON\nformatVersion, variant, state", shape=note, fillcolor="#ffffff"];
+    tprog   [label="test_program\n14 сценариев (Qt Test)", fillcolor="#f6dcdc"];
+    tstor   [label="test_storage\n8 сценариев (Qt Test)", fillcolor="#f6dcdc"];
+
+    { rank=same; storage; program; }
+    { rank=same; file; types; }
+    { rank=same; tstor; tprog; }
+
+    main -> ui;
+    ui -> storage [label=" открыть,\n сохранить"];
+    ui -> program [label=" операции"];
+    storage -> program [label="временный\nобъект"];
+    storage -> file [dir=both, label=" чтение,\n запись"];
+    program -> types;
+    storage -> tstor [dir=back, style=dashed];
+    program -> tprog [dir=back, style=dashed];
+    file -> tstor [style=invis];
+    types -> tprog [style=invis];
+}
