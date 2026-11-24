@@ -28,6 +28,8 @@ target_link_libraries(music_core PUBLIC Qt6::Core)
 
 qt_add_executable(MusicProgram WIN32
     src/main.cpp
+    src/mainwindow.h
+    src/mainwindow.cpp
 )
 target_link_libraries(MusicProgram PRIVATE music_core Qt6::Widgets)
 
