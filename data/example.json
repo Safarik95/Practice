@@ -1,0 +1,13 @@
+{
+    "formatVersion": 1,
+    "variant": 2,
+    "state": {
+        "tracks": [
+            {"code": 101, "title": "Увертюра", "artist": "Городской оркестр", "duration": 240},
+            {"code": 102, "title": "Весенний вальс", "artist": "Анна Петрова", "duration": 185},
+            {"code": 103, "title": "Дождь", "artist": "Группа Север", "duration": 210},
+            {"code": 104, "title": "Городской блюз", "artist": "Иван Смирнов", "duration": 300},
+            {"code": 105, "title": "Финальная песня", "artist": "Детский хор", "duration": 150}
+        ]
+    }
+}

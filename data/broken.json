@@ -1,0 +1,7 @@
+{
+    "formatVersion": 1,
+    "variant": 2,
+    "state": {
+        "tracks": [
+            {"code": 101, "title": "Увертюра", "artist": "Городской оркестр", "duration": 240},
+            {"code": 102, "title": "Весенний вальс"

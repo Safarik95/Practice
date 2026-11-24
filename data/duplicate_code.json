@@ -1,0 +1,10 @@
+{
+    "formatVersion": 1,
+    "variant": 2,
+    "state": {
+        "tracks": [
+            {"code": 101, "title": "Увертюра", "artist": "Городской оркестр", "duration": 240},
+            {"code": 101, "title": "Дождь", "artist": "Группа Север", "duration": 210}
+        ]
+    }
+}

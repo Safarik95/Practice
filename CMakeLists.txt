@@ -20,6 +20,8 @@ add_library(music_core STATIC
     src/track.h
     src/program.h
     src/program.cpp
+    src/storage.h
+    src/storage.cpp
 )
 target_include_directories(music_core PUBLIC src)
 target_link_libraries(music_core PUBLIC Qt6::Core)
@@ -35,4 +37,11 @@ qt_add_executable(test_program tests/test_program.cpp)
 target_link_libraries(test_program PRIVATE music_core Qt6::Test)
 add_test(NAME test_program COMMAND test_program)
 set_tests_properties(test_program PROPERTIES
+    ENVIRONMENT_MODIFICATION "PATH=path_list_prepend:$<TARGET_FILE_DIR:Qt6::Core>")
+
+qt_add_executable(test_storage tests/test_storage.cpp)
+target_link_libraries(test_storage PRIVATE music_core Qt6::Test)
+target_compile_definitions(test_storage PRIVATE DATA_DIR="${CMAKE_CURRENT_SOURCE_DIR}/data")
+add_test(NAME test_storage COMMAND test_storage)
+set_tests_properties(test_storage PROPERTIES
     ENVIRONMENT_MODIFICATION "PATH=path_list_prepend:$<TARGET_FILE_DIR:Qt6::Core>")
